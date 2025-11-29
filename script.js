@@ -55,7 +55,7 @@
         });
     }
 
-    const CV_PATH = 'assets\Mohd_Abdullah_Meraj_CV.pdf';
+    const CV_PATH = 'assets/Mohd_Abdullah_Meraj_CV.pdf';
     const CV_FILENAME = 'Mohd_Abdullah_Meraj_CV.pdf';
 
     function triggerDownload(url, filename){

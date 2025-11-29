@@ -1,0 +1,170 @@
+/* =========================================================
+   WINDOWS TERMINAL — AESTHETIC DARK THEME
+   Smooth cyan glow • polished edges • Windows buttons
+   ========================================================= */
+
+:root {
+  --bg: #0d0d0d;
+  --panel: #111111;
+  --text: #e5e5e5;
+  --muted: #868686;
+  --accent: #4fc3f7;      /* cyan */
+  --green: #3fd67c;       /* neon green */
+  --red: #ff5f5f;
+  --yellow: #e2c08d;
+}
+
+/* GLOBAL SETUP */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: radial-gradient(1200px at 50% -200px, #1a1a1a 0%, var(--bg) 60%);
+  font-family: "Cascadia Mono", Consolas, monospace;
+  color: var(--text);
+  display: grid;
+  place-items: center;
+}
+
+/* TERMINAL CONTAINER */
+.terminal {
+  width: min(1400px, 96vw);
+  height: min(85vh, 900px);
+  background: linear-gradient(180deg, #111111, #0c0c0c);
+  border: 1px solid #2b2b2b;
+  border-radius: 10px;
+  overflow: hidden;
+
+  /* Aesthetic Windows glow */
+  box-shadow:
+    0 0 45px rgba(0, 0, 0, 0.55),
+    0 0 120px rgba(79, 195, 247, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  
+  display: grid;
+  grid-template-rows: 36px 1fr;
+}
+
+/* TITLEBAR */
+.titlebar {
+  background: #0f0f0f;
+  border-bottom: 1px solid #2e2e2e;
+  padding: 0 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: .02em;
+  user-select: none;
+}
+
+/* WINDOWS BUTTONS */
+.win-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 10px;
+}
+
+.win-btn {
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 11px;
+  background: #1b1b1b;
+  border-radius: 2px;
+  border: 1px solid #2a2a2a;
+  color: #cfcfcf;
+
+  user-select: none;
+}
+
+/* BUTTON COLORS */
+.win-btn.minimize { color: #f1c40f; }
+.win-btn.maximize { color: #2ecc71; }
+.win-btn.close { color: #ff5f5f; }
+
+/* TITLEBAR TEXT */
+.titlebar span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* SCREEN (TERMINAL BODY) */
+.screen {
+  padding: 14px 16px;
+  overflow: auto;
+}
+
+/* TERMINAL LINES */
+.line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 17px;
+}
+
+/* COLORS */
+.muted { color: var(--muted); }
+.green { color: var(--green); }
+.red { color: var(--red); }
+.yellow { color: var(--yellow); }
+.accent { color: var(--accent); }
+
+/* PROMPT LINE */
+.prompt-line {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.prompt {
+  color: var(--green);
+}
+
+/* INPUT FIELD */
+#cmd {
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: var(--text);
+  caret-color: var(--accent);
+  min-height: 1em;
+  font-size: 17px;
+}
+
+/* HIGHLIGHT WHEN SELECTING TEXT */
+#cmd::selection {
+  background: rgba(79, 195, 247, 0.35);
+}
+
+/* CYAN GLOW ON PROMPT */
+.glow {
+  text-shadow: 0 0 8px rgba(79, 195, 247, 0.4);
+}
+
+/* TREE LAYOUT FOR LISTS */
+.tree-branch {
+  margin-left: 1.25em;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.tree-sub {
+  margin-left: 2.5em;
+}
+
+/* LINKS */
+.screen a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.screen a:hover {
+  text-decoration: underline;
+}
